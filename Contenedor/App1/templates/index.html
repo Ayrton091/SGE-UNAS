@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGE UNAS</title>
+    <link rel="stylesheet" href="{% static "stiloindex.css" %}">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Configuración</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Aquí irán los elementos del dashboard -->
+        <section>
+            <h2>Resumen</h2>
+            <p>Contenido del resumen...</p>
+        </section>
+
+        <section>
+            <h2>Gráficos</h2>
+            <div id="chart-container">
+                <!-- Aquí irán los gráficos -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 UNAS</p>
+    </footer>
+</body>
+</html>
