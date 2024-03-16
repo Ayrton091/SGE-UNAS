@@ -12,30 +12,24 @@
     <header>
         <h1>Dashboard</h1>
     </header>
+    <form method="GET">
+        <div>
+            {{ filter.form.escuela_profesional.label_tag }}
+            {{ filter.form.escuela_profesional }}
+        </div>
+        <div>
+            {{ filter.form.fecha_ingreso__year.label_tag }}
+            {{ filter.form.fecha_ingreso__year }}
+        </div>
+        <button type="submit">Filtrar</button>
+    </form>
     
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Reportes</a></li>
-            <li><a href="#">Configuración</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <!-- Aquí irán los elementos del dashboard -->
-        <section>
-            <h2>Resumen</h2>
-            <p>Contenido del resumen...</p>
-        </section>
-
-        <section>
-            <h2>Gráficos</h2>
-            <div id="chart-container">
-                <!-- Aquí irán los gráficos -->
-            </div>
-        </section>
-    </main>
-
+    {% for alumno in alumnos %}
+        <!-- Mostrar los datos del alumno -->
+        {{ alumno.nombre }}, {{ alumno.apellido_paterno }}, {{ alumno.apellido_materno }}, {{ alumno.Escuela_profesional }}
+        <!-- Puedes seguir mostrando otros campos según lo necesario -->
+    {% endfor %}
+    
     <footer>
         <p>© 2024 UNAS</p>
     </footer>

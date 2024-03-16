@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>holi</title>
+    
+    <link rel="stylesheet" href="{% static "stiloalumno.css" %}">
+</head>
+<!-- En tu template alumno_list.html -->
+
+<form method="GET" class="filtro">
+    <ul>
+        <li>
+            <label for="id_escuela_profesional">Escuela Profesional:</label>
+            {{ filter.form.escuela_profesional }}
+        </li>
+        <!-- Elimina el bloque de código para el filtro por año de ingreso -->
+    </ul>
+    <button type="submit">Filtrar</button>
+</form>
+
+<div class="resultados">
+    <ul>
+        {% for alumno in alumnos %}
+            <li class="alumno">
+                <!-- Mostrar los datos del alumno -->
+                <div class="nombre">{{ alumno.nombre }} {{ alumno.apellido_paterno }} {{ alumno.apellido_materno }}</div>
+                <div class="escuela-profesional">{{ alumno.Escuela_profesional }}</div>
+                <!-- Puedes seguir mostrando otros campos según lo necesario -->
+            </li>
+        {% empty %}
+            <li>No se encontraron alumnos.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</html>

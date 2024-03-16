@@ -1,0 +1,23 @@
+/* En tu archivo CSS o en línea en tu HTML */
+
+.filtro {
+    margin-bottom: 20px;
+}
+
+.resultados {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.alumno {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.nombre {
+    font-weight: bold;
+}
+
+.escuela-profesional {
+    color: #666;
+}

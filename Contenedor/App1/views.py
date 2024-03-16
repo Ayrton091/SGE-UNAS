@@ -1,9 +1,11 @@
 from django.shortcuts import render
 import matplotlib
 matplotlib.use('agg')
+from django.views.generic import ListView
 from django.shortcuts import render
 from .models import Escuela_profesional, Alumno
 import matplotlib.pyplot as plt
+from .filters import AlumnoFilter
 
 # Create your views here.
 
@@ -47,3 +49,18 @@ def grafico_alumnos_por_escuela(request):
     buffer.close()
 
     return render(request, 'grafico.html', {'grafico_base64': grafico_base64})
+
+class AlumnoListView(ListView):
+    model = Alumno
+    template_name = 'alumno_list.html'
+    context_object_name = 'alumnos'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        self.filters = AlumnoFilter(self.request.GET, queryset=queryset)
+        return self.filters.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = self.filters
+        return context
