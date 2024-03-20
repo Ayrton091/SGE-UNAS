@@ -6,12 +6,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGE UNAS</title>
+    <link rel="stylesheet" href="{% static "index.css" %}">
     <link rel="stylesheet" href="{% static "stiloindex.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+        <div class="intro">
+            <img src="{% static "logo.png" %}" alt="clarkode logo">
+            <h1 class="logo">
+                <span class="logo-parts">S</span>
+                <span class="logo-parts">G</span>
+                <span class="logo-parts">E</span>
+                <span class="logo-parts">-</span>
+                <span class="logo-parts">U</span>
+                <span class="logo-parts">N</span>
+                <span class="logo-parts">A</span>
+                <span class="logo-parts">S</span>
+            </h1>
+            <p>SISTEMA DE GESTION DE EGRESADOS</p>
+        </div> 
     <header>
         <h1>Dashboard</h1>
     </header>
+        <div class="container">
+            <img src="{% static "logo.png" %}" alt="Logo" class="logo2">
+            <form action="{% url 'alumno_list' %}" method="get">
+                <button class="button2" type="submit">Lista</button>
+            </form>
+            <div class="line"></div>
+            <form  action="{% url 'graficos' %}" method="get">
+                <button class="button2" type="submit">Grafico</button>
+            </form>
+        </div>
     <form method="GET">
         <div>
             {{ filter.form.escuela_profesional.label_tag }}
@@ -22,7 +48,7 @@
             {{ filter.form.fecha_ingreso__year }}
         </div>
         <button type="submit">Filtrar</button>
-    </form>
+   
     
     {% for alumno in alumnos %}
         <!-- Mostrar los datos del alumno -->
@@ -33,5 +59,7 @@
     <footer>
         <p>© 2024 UNAS</p>
     </footer>
+    <script src="{% static "app.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

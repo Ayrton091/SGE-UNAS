@@ -11,6 +11,12 @@ header {
     text-align: center;
     padding: 20px;
 }
+.intro img {
+    width: 200px; /* Cambia el tamaño de la imagen a 150 píxeles de ancho */
+    height: auto; /* Esto mantiene la proporción original de la imagen */
+    top: 150px;
+    position: absolute;
+}
 
 nav ul {
     list-style-type: none;
@@ -32,7 +38,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #ddd;
+    background-color: #cbffaa;
 }
 
 main {
@@ -47,4 +53,60 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+html{
+    /*background-color: #cbffaa;*/
+    position: relative;
+}
+
+/*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}*/
+
+.container {
+    margin-top: 250px;
+    display: flex;
+    align-items: center;
+    gap: 130px;
+    position: absolute;
+    top: 45%; /* Ajustamos la posición vertical del logo */
+    left: 42%;
+}
+
+.line {
+    height: 100px;
+    width: 2px;
+    background-color: black;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button2 {
+    width: 100px; /* Ancho fijo para los botones */
+    height: 40px; /* Alto fijo para los botones */
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #00ff00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    margin-right: -60px; /* Ajustamos el margen derecho para acercar los botones a la línea */
+    margin-left: -60px;
+    top: 70%;
+}
+
+.logo2 {
+    width: 150px;
+    height: auto;
+    position: absolute; /* Establecemos posición absoluta para el logo */
+    top: -100%; /* Ajustamos la posición vertical del logo */
+    left: 3.3%;
+     /* Aseguramos que el logo esté arriba de los otros elementos */
 }

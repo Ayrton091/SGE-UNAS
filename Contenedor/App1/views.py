@@ -7,6 +7,7 @@ from .models import Escuela_profesional, Alumno
 import matplotlib.pyplot as plt
 from .filters import AlumnoFilter
 
+
 # Create your views here.
 
 
@@ -64,3 +65,6 @@ class AlumnoListView(ListView):
         context = super().get_context_data(**kwargs)
         context['filter'] = self.filters
         return context
+    
+#def alumno(request):
+ #   return render(request,'alumno_list.html')
