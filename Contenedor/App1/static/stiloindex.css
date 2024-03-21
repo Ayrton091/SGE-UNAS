@@ -107,6 +107,6 @@ html{
     height: auto;
     position: absolute; /* Establecemos posición absoluta para el logo */
     top: -100%; /* Ajustamos la posición vertical del logo */
-    left: 3.3%;
+    left: 0%;
      /* Aseguramos que el logo esté arriba de los otros elementos */
 }
